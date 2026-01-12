@@ -12,16 +12,17 @@
   z-index: 999;
 
   &__nav {
-    @include mixin.flex(row, flex-start, flex-start, nowrap, 42px);
+    @include mixin.flex(row, flex-end, flex-start, nowrap, 42px);
     width: 100%;
     max-width: var(--ds-page-width);
 
     &__title {
-      @include mixin.text(body-md, 600);
+      @include mixin.text(body-lg, 600);
     }
 
     &__tabs {
-      @include mixin.flex(row, flex-end, flex-start, nowrap, 20px);
+      @include mixin.flex(row, center, flex-start, nowrap, 20px);
+      height: 100%;
     }
   }
 }
