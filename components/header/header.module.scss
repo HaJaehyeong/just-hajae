@@ -12,7 +12,7 @@
   z-index: 999;
 
   &__nav {
-    @include mixin.flex(row, flex-start, flex-start, nowrap, 30px);
+    @include mixin.flex(row, flex-start, flex-start, nowrap, 42px);
     width: 100%;
     max-width: var(--ds-page-width);
 
@@ -21,12 +21,20 @@
     }
 
     &__tabs {
-      @include mixin.flex(row, flex-end, flex-start, nowrap, 16px);
-      color: var(--text-secondary);
-
-      &--active {
-        color: var(--primary);
-      }
+      @include mixin.flex(row, flex-end, flex-start, nowrap, 20px);
     }
+  }
+}
+
+.tab {
+  color: var(--text-secondary);
+
+  &--active {
+    font-weight: 500;
+    color: var(--primary);
+  }
+
+  &:hover {
+    color: var(--text-hover);
   }
 }

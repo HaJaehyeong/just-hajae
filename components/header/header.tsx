@@ -16,7 +16,7 @@ export default function Header() {
             <Link
               key={tab.id}
               href={tab.url}
-              className={`${pathname === tab.url ? styles['header__nav__tabs--active'] : ''}`}
+              className={`${styles['tab']} ${pathname === tab.url ? styles['tab--active'] : ''}`}
             >
               {tab.name}
             </Link>
