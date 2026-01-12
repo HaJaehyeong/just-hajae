@@ -1,8 +1,8 @@
 @use '@/styles/mixins' as mixin;
 
 .header {
-  @include mixin.flex(row, center, center, nowrap, 10px);
-  @include mixin.text(body-md, 600);
+  @include mixin.flex(row, center, center);
+  @include mixin.text(body-sm, 400);
   position: sticky;
   width: 100dvw;
   padding: 16px;
@@ -12,7 +12,21 @@
   z-index: 999;
 
   &__nav {
+    @include mixin.flex(row, flex-start, flex-start, nowrap, 30px);
     width: 100%;
     max-width: var(--ds-page-width);
+
+    &__title {
+      @include mixin.text(body-md, 600);
+    }
+
+    &__tabs {
+      @include mixin.flex(row, flex-end, flex-start, nowrap, 16px);
+      color: var(--text-secondary);
+
+      &--active {
+        color: var(--primary);
+      }
+    }
   }
 }
