@@ -11,6 +11,7 @@ const customJestConfig = {
 
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
+    '\\.(css|scss)$': 'identity-obj-proxy',
   },
 
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
