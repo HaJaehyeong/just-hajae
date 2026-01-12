@@ -1,0 +1,7 @@
+@use '@/styles/mixins' as mixin;
+
+.header {
+  width: 100dvw;
+  height: 48px;
+  border-bottom: solid 1px var(--border);
+}

@@ -12,6 +12,10 @@ html {
   @include mixin.media(tablet) {
     font-size: calc(100vw / 1024 * 10);
   }
+
+  @include mixin.media(mobile) {
+    font-size: 10px;
+  }
 }
 
 body {
