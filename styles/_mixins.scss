@@ -72,9 +72,51 @@ $breakpoints: (
   #{$property}: $result;
 }
 
-@mixin typo2($font-size, $font-weight: 400, $letter-spacing: 0) {
+@mixin typo($font-size, $font-weight: 400, $color: var(--text-primary), $letter-spacing: 0) {
   font-size: $font-size;
   line-height: 108.1%;
   font-weight: $font-weight;
   letter-spacing: $letter-spacing;
+  color: $color;
+}
+
+@mixin text($level, $weight: 400) {
+  @if $level == body-lg {
+    @include typo(20px, $weight);
+    @include media(laptop) {
+      @include typo(16px, $weight);
+    }
+    @include media(tablet) {
+      @include typo(15px, $weight);
+    }
+    @include media(mobile) {
+      @include typo(14px, $weight);
+    }
+  }
+
+  @if $level == body-md {
+    @include typo(16px, $weight);
+    @include media(laptop) {
+      @include typo(14px, $weight);
+    }
+    @include media(tablet) {
+      @include typo(13px, $weight);
+    }
+    @include media(mobile) {
+      @include typo(12px, $weight);
+    }
+  }
+
+  @if $level == body-sm {
+    @include typo(14px, $weight);
+    @include media(laptop) {
+      @include typo(12px, $weight);
+    }
+    @include media(tablet) {
+      @include typo(11px, $weight);
+    }
+    @include media(mobile) {
+      @include typo(10px, $weight);
+    }
+  }
 }
