@@ -1,0 +1,27 @@
+@use '@/styles/mixins' as mixin;
+@use '@/styles/reset';
+@use '@/styles/colors';
+
+html {
+  font-size: calc(100vw / 1920 * 10);
+
+  @include mixin.media(laptop) {
+    font-size: calc(100vw / 1512 * 10);
+  }
+
+  @include mixin.media(tablet) {
+    font-size: calc(100vw / 1024 * 10);
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease;
+
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
