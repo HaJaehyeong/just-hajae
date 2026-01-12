@@ -2,7 +2,7 @@
 
 .header {
   @include mixin.flex(row, center, center, nowrap, 10px);
-  @include mixin.typo(16px, 500);
+  @include mixin.text(body-md, 600);
   position: sticky;
   width: 100dvw;
   padding: 16px;
@@ -14,17 +14,5 @@
   &__nav {
     width: 100%;
     max-width: var(--ds-page-width);
-  }
-
-  @include mixin.media(laptop) {
-    @include mixin.typo(14px, 500);
-  }
-
-  @include mixin.media(tablet) {
-    @include mixin.typo(13px, 500);
-  }
-
-  @include mixin.media(mobile) {
-    @include mixin.typo(12px, 500);
   }
 }
