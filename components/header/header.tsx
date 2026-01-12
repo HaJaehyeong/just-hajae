@@ -1,5 +1,9 @@
 import styles from './header.module.scss';
 
 export default function Header() {
-  return <div className={styles['header']}>hello</div>;
+  return (
+    <header className={styles['header']}>
+      <nav className={styles['header__nav']}>JUST HAJAE</nav>
+    </header>
+  );
 }

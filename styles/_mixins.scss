@@ -72,9 +72,10 @@ $breakpoints: (
   #{$property}: $result;
 }
 
-@mixin typo2($font-size, $font-weight: 400, $letter-spacing: 0) {
+@mixin typo($font-size, $font-weight: 400, $color: var(--text-primary), $letter-spacing: 0) {
   font-size: $font-size;
   line-height: 108.1%;
   font-weight: $font-weight;
   letter-spacing: $letter-spacing;
+  color: $color;
 }

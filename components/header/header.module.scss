@@ -1,7 +1,30 @@
 @use '@/styles/mixins' as mixin;
 
 .header {
+  @include mixin.flex(row, center, center, nowrap, 10px);
+  @include mixin.typo(16px, 500);
+  position: sticky;
   width: 100dvw;
-  height: 48px;
+  padding: 16px;
+
   border-bottom: solid 1px var(--border);
+
+  z-index: 999;
+
+  &__nav {
+    width: 100%;
+    max-width: var(--ds-page-width);
+  }
+
+  @include mixin.media(laptop) {
+    @include mixin.typo(14px, 500);
+  }
+
+  @include mixin.media(tablet) {
+    @include mixin.typo(13px, 500);
+  }
+
+  @include mixin.media(mobile) {
+    @include mixin.typo(12px, 500);
+  }
 }
