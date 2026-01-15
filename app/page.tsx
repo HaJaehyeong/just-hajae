@@ -1,9 +1,5 @@
-import Header from '@/components/header/header';
+import OneColumnLayout from '@/components/one-column-layout/one-column-layout';
 
 export default function Home() {
-  return (
-    <>
-      <Header />
-    </>
-  );
+  return <OneColumnLayout>hello world</OneColumnLayout>;
 }

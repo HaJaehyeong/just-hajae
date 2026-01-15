@@ -4,9 +4,11 @@
   @include mixin.flex(row, center, center);
   @include mixin.text(body-sm, 400);
   position: sticky;
+  top: 0;
   width: 100dvw;
   padding: 16px;
 
+  background-color: var(--bg-primary);
   border-bottom: solid 1px var(--border);
 
   z-index: 999;

@@ -1,0 +1,22 @@
+@use '@/styles/mixins' as mixin;
+
+.layout {
+  @include mixin.flex(row, flex-start, center);
+  padding: 0 24px;
+  width: 100%;
+}
+
+.one-column {
+  @include mixin.flex(row, flex-start, center);
+  @include mixin.text(body-sm, 400);
+  padding: 40px 0;
+  max-width: var(--ds-page-width);
+  width: 100%;
+}
+
+.center {
+  position: relative;
+  margin-top: 14px;
+  flex: 1;
+  min-height: calc(100dvh + 103px);
+}
