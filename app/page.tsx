@@ -1,11 +1,5 @@
-import ThreeColumnLayout from '@/components/three-column-layout/three-column-layout';
+import OneColumnLayout from '@/components/one-column-layout/one-column-layout';
 
 export default function Home() {
-  return (
-    <ThreeColumnLayout
-      left={<>왼쪽입니다</>}
-      center={<>가운데입니다</>}
-      right={<>오른쪽입니다</>}
-    />
-  );
+  return <OneColumnLayout>hello world</OneColumnLayout>;
 }
