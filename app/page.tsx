@@ -1,5 +1,17 @@
-import OneColumnLayout from '@/components/one-column-layout/one-column-layout';
+import LinkCard from '@/components/link-card/link-card';
+import ThreeColumnLayout from '@/components/three-column-layout/three-column-layout';
 
 export default function Home() {
-  return <OneColumnLayout>hello world</OneColumnLayout>;
+  return (
+    <ThreeColumnLayout
+      left={
+        <>
+          <LinkCard url="https://www.naver.com" title="Naver" />
+          <LinkCard url="https://github.com/HaJaehyeong/" title="To Github" isExternal />
+        </>
+      }
+      center={<>hello</>}
+      right={<>world</>}
+    />
+  );
 }

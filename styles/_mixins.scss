@@ -80,43 +80,56 @@ $breakpoints: (
   color: $color;
 }
 
-@mixin text($level, $weight: 400) {
+@mixin text($level, $weight: 400, $color: var(--text-primary)) {
   @if $level == body-lg {
-    @include typo(20px, $weight);
+    @include typo(20px, $weight, $color);
     @include media(laptop) {
-      @include typo(16px, $weight);
+      @include typo(16px, $weight, $color);
     }
     @include media(tablet) {
-      @include typo(15px, $weight);
+      @include typo(15px, $weight, $color);
     }
     @include media(mobile) {
-      @include typo(14px, $weight);
+      @include typo(14px, $weight, $color);
     }
   }
 
   @if $level == body-md {
-    @include typo(16px, $weight);
+    @include typo(16px, $weight, $color);
     @include media(laptop) {
-      @include typo(14px, $weight);
+      @include typo(14px, $weight, $color);
     }
     @include media(tablet) {
-      @include typo(13px, $weight);
+      @include typo(13px, $weight, $color);
     }
     @include media(mobile) {
-      @include typo(12px, $weight);
+      @include typo(12px, $weight, $color);
     }
   }
 
   @if $level == body-sm {
-    @include typo(14px, $weight);
+    @include typo(14px, $weight, $color);
     @include media(laptop) {
-      @include typo(12px, $weight);
+      @include typo(12px, $weight, $color);
     }
     @include media(tablet) {
-      @include typo(11px, $weight);
+      @include typo(11px, $weight, $color);
     }
     @include media(mobile) {
-      @include typo(10px, $weight);
+      @include typo(10px, $weight, $color);
+    }
+  }
+
+  @if $level == body-xs {
+    @include typo(12px, $weight, $color);
+    @include media(laptop) {
+      @include typo(10px, $weight, $color);
+    }
+    @include media(tablet) {
+      @include typo(9.5px, $weight, $color);
+    }
+    @include media(mobile) {
+      @include typo(9px, $weight, $color);
     }
   }
 }
