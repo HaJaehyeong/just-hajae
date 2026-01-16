@@ -1,4 +1,4 @@
-import { RiExternalLinkLine, RiUser5Line } from '@remixicon/react';
+import { RemixiconComponentType, RiExternalLinkLine, RiUser5Line } from '@remixicon/react';
 import Link from 'next/link';
 import styles from './link-card.module.scss';
 
@@ -6,9 +6,15 @@ interface LinkCardProps {
   url: string;
   title: string;
   isExternal?: boolean;
+  icon?: RemixiconComponentType;
 }
 
-export default function LinkCard({ url, title, isExternal = false }: LinkCardProps) {
+export default function LinkCard({
+  url,
+  title,
+  isExternal = false,
+  icon: Icon = RiUser5Line,
+}: LinkCardProps) {
   return (
     <Link
       href={url}
@@ -18,7 +24,7 @@ export default function LinkCard({ url, title, isExternal = false }: LinkCardPro
     >
       <div className={styles['card']}>
         <div className={styles['card__icon']}>
-          <RiUser5Line size={20} />
+          <Icon size={20} />
         </div>
         <div className={styles['card__body']}>
           <span className={styles['card__body__title']}>{title}</span>
