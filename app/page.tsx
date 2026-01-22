@@ -1,19 +1,21 @@
 import LinkCard from '@/components/link-card/link-card';
 import ThreeColumnLayout from '@/components/three-column-layout/three-column-layout';
-import { RiGithubLine } from '@remixicon/react';
+import { SHARE_LINK } from '@/constants/constants';
 
 export default function Home() {
   return (
     <ThreeColumnLayout
       left={
         <>
-          <LinkCard url="https://www.naver.com" title="Naver" />
-          <LinkCard
-            url="https://github.com/HaJaehyeong/"
-            title="To Github"
-            icon={RiGithubLine}
-            isExternal
-          />
+          {SHARE_LINK.map((link) => (
+            <LinkCard
+              key={link.key}
+              url={link.url}
+              title={link.title}
+              icon={link.icon}
+              isExternal
+            />
+          ))}
         </>
       }
       center={<>hello</>}
