@@ -24,7 +24,7 @@ export default function LinkCard({
     >
       <div className={styles['card']}>
         <div className={styles['card__icon']}>
-          <Icon size={20} />
+          <Icon size={20} color="var(--primary)" />
         </div>
         <div className={styles['card__body']}>
           <span className={styles['card__body__title']}>{title}</span>
