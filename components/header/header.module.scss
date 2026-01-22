@@ -1,0 +1,43 @@
+@use '@/styles/mixins' as mixin;
+
+.header {
+  @include mixin.flex(row, center, center);
+  @include mixin.text(body-sm, 400);
+  position: sticky;
+  top: 0;
+  width: 100dvw;
+  padding: 16px;
+
+  background-color: var(--bg-primary);
+  border-bottom: solid 1px var(--border);
+
+  z-index: 999;
+
+  &__nav {
+    @include mixin.flex(row, flex-end, flex-start, nowrap, 42px);
+    width: 100%;
+    max-width: var(--ds-page-width);
+
+    &__title {
+      @include mixin.text(body-lg, 600);
+    }
+
+    &__tabs {
+      @include mixin.flex(row, center, flex-start, nowrap, 20px);
+      height: 100%;
+    }
+  }
+}
+
+.tab {
+  color: var(--text-secondary);
+
+  &--active {
+    font-weight: 500;
+    color: var(--primary);
+  }
+
+  &:hover {
+    color: var(--text-hover);
+  }
+}

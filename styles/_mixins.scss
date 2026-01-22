@@ -1,0 +1,135 @@
+// @include mixin.flex(row, center, null, null, 10px);
+@mixin flex($direction: row, $align: center, $justify: center, $wrap: nowrap, $gap: null) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  flex-direction: $direction;
+  -webkit-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+
+  align-items: $align;
+  -webkit-align-items: $align;
+  -ms-flex-align: $align;
+
+  justify-content: $justify;
+  -webkit-justify-content: $justify;
+  -ms-flex-pack: $justify;
+
+  flex-wrap: $wrap;
+  -webkit-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+
+  @if $gap != null {
+    gap: $gap;
+  }
+}
+
+// @include ellipsis;
+// @include ellipsis(2);
+@mixin ellipsis($line: 1) {
+  @if $line == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+$breakpoints: (
+  'mobile': 768px,
+  'tablet': 1024px,
+  'laptop': 1512px,
+  'desktop': 1920px,
+);
+
+@mixin media($device) {
+  @media (max-width: map-get($breakpoints, $device)) {
+    @content;
+  }
+}
+
+// @include vw(padding, 20);
+@mixin vw($property, $px, $viewport: 1920) {
+  #{$property}: calc(($px / $viewport) * 100vw);
+}
+
+// @include vw-multi(margin, (40px, 10px, 20px, 10px));
+@mixin vw-multi($property, $values, $viewport: 1920) {
+  $result: ();
+
+  @each $value in $values {
+    $numeric-value: if(unit($value) == 'px', $value / 1px, $value);
+    $calc: calc(#{$numeric-value} / #{$viewport} * 100vw);
+    $result: append($result, $calc);
+  }
+
+  #{$property}: $result;
+}
+
+@mixin typo($font-size, $font-weight: 400, $color: var(--text-primary), $letter-spacing: 0) {
+  font-size: $font-size;
+  line-height: 108.1%;
+  font-weight: $font-weight;
+  letter-spacing: $letter-spacing;
+  color: $color;
+}
+
+@mixin text($level, $weight: 400, $color: var(--text-primary)) {
+  @if $level == body-lg {
+    @include typo(20px, $weight, $color);
+    @include media(laptop) {
+      @include typo(16px, $weight, $color);
+    }
+    @include media(tablet) {
+      @include typo(15px, $weight, $color);
+    }
+    @include media(mobile) {
+      @include typo(14px, $weight, $color);
+    }
+  }
+
+  @if $level == body-md {
+    @include typo(16px, $weight, $color);
+    @include media(laptop) {
+      @include typo(14px, $weight, $color);
+    }
+    @include media(tablet) {
+      @include typo(13px, $weight, $color);
+    }
+    @include media(mobile) {
+      @include typo(12px, $weight, $color);
+    }
+  }
+
+  @if $level == body-sm {
+    @include typo(14px, $weight, $color);
+    @include media(laptop) {
+      @include typo(12px, $weight, $color);
+    }
+    @include media(tablet) {
+      @include typo(11px, $weight, $color);
+    }
+    @include media(mobile) {
+      @include typo(10px, $weight, $color);
+    }
+  }
+
+  @if $level == body-xs {
+    @include typo(12px, $weight, $color);
+    @include media(laptop) {
+      @include typo(10px, $weight, $color);
+    }
+    @include media(tablet) {
+      @include typo(9.5px, $weight, $color);
+    }
+    @include media(mobile) {
+      @include typo(9px, $weight, $color);
+    }
+  }
+}
