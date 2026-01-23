@@ -36,8 +36,10 @@ function TreeItem({ node }: TreeItemProps) {
         {hasChild && (isOpen ? <RiArrowDownSLine size={20} /> : <RiArrowRightSLine size={20} />)}
       </div>
 
-      {hasChild && isOpen && (
-        <div className={styles['node__children']}>
+      {hasChild && (
+        <div
+          className={`${styles['node__children']} ${isOpen ? styles['node__children--open'] : ''}`}
+        >
           <TreeMenu nodes={node.children!} />
         </div>
       )}
