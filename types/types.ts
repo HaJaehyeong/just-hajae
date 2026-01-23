@@ -12,3 +12,10 @@ export type ShareLink = {
   title: string;
   icon?: RemixiconComponentType;
 };
+
+export type TreeNode = {
+  id: string;
+  label: string;
+  children?: TreeNode[];
+  isBold?: boolean;
+};
