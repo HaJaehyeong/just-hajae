@@ -2,4 +2,6 @@
 
 .wrapper {
   width: 100%;
+  height: calc(100dvh - 258px);
+  overflow-y: scroll;
 }

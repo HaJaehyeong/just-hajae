@@ -6,11 +6,12 @@ import styles from './tree-menu.module.scss';
 
 interface TreeMenuProps {
   nodes: TreeNode[];
+  isChildren?: boolean;
 }
 
-export default function TreeMenu({ nodes }: TreeMenuProps) {
+export default function TreeMenu({ nodes, isChildren = false }: TreeMenuProps) {
   return (
-    <div className={styles['wrapper']}>
+    <div className={`${styles['wrapper']} ${styles['children']}`}>
       {nodes.map((node) => (
         <TreeItem key={node.id} node={node} />
       ))}
@@ -40,7 +41,7 @@ function TreeItem({ node }: TreeItemProps) {
         <div
           className={`${styles['node__children']} ${isOpen ? styles['node__children--open'] : ''}`}
         >
-          <TreeMenu nodes={node.children!} />
+          <TreeMenu nodes={node.children!} isChildren />
         </div>
       )}
     </div>
