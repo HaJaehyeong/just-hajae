@@ -1,4 +1,4 @@
-import { NavTab, ShareLink } from '@/types/types';
+import { NavTab, ShareLink, TreeNode } from '@/types/types';
 import { RiGithubLine } from '@remixicon/react';
 
 export const NAV_TABS: NavTab[] = [
@@ -45,5 +45,46 @@ export const SHARE_LINK: ShareLink[] = [
     url: 'https://github.com/HaJaehyeong/',
     title: 'To Github',
     icon: RiGithubLine,
+  },
+];
+
+export const TREE_MENU: TreeNode[] = [
+  {
+    id: 'tree-node-1',
+    label: 'Hello World!!!!',
+    isBold: true,
+  },
+  {
+    id: 'tree-node-2',
+    label: 'He ll oW or ld !!!!!',
+  },
+  {
+    id: 'tree-node-parents-1',
+    label: 'Hello Parents!',
+    children: [
+      {
+        id: 'tree-node-childrent-1',
+        label: 'Hello Children!',
+      },
+      {
+        id: 'tree-node-childrent-2',
+        label: 'Hello Children!!',
+      },
+    ],
+  },
+  {
+    id: 'tree-node-parents-2',
+    label: 'Hello Parents2!!',
+    children: [
+      {
+        id: 'tree-node-childrent-3',
+        label: 'Hello Children!!!',
+      },
+      {
+        id: 'tree-node-childrent-4',
+        label: 'Hello Children!!!!',
+      },
+    ],
+    isBold: true,
   },
 ];

@@ -1,5 +1,5 @@
 @use '@/styles/mixins' as mixin;
 
 .wrapper {
-  @include mixin.text(body-md);
+  width: 100%;
 }
