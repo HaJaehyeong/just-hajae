@@ -3,6 +3,7 @@ import { TreeNode } from '@/types/types';
 import { RiArrowDownSLine, RiArrowRightSLine } from '@remixicon/react';
 import { useState } from 'react';
 import styles from './tree-menu.module.scss';
+import Link from 'next/link';
 
 interface TreeMenuProps {
   nodes: TreeNode[];
@@ -24,17 +25,26 @@ interface TreeItemProps {
 
 function TreeItem({ node }: TreeItemProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const hasChild = node.children && node.children.length > 0;
+  const hasChild = !!(node.children && node.children.length > 0);
 
   return (
     <div className={styles['node']}>
-      <div
-        className={`${styles['node__parents']} ${node.isBold ? styles['bold'] : ''}`}
-        onClick={() => hasChild && setIsOpen((prev) => !prev)}
-      >
-        <span>{node.label}</span>
-        {hasChild && (isOpen ? <RiArrowDownSLine size={20} /> : <RiArrowRightSLine size={20} />)}
-      </div>
+      {!!node.url ? (
+        <Link
+          className={`${styles['node__parents']} ${node.isBold ? styles['bold'] : ''}`}
+          href={node.url}
+        >
+          {node.label}
+        </Link>
+      ) : (
+        <div
+          className={`${styles['node__parents']} ${node.isBold ? styles['bold'] : ''}`}
+          onClick={() => hasChild && setIsOpen((prev) => !prev)}
+        >
+          <span>{node.label}</span>
+          {hasChild && (isOpen ? <RiArrowDownSLine size={20} /> : <RiArrowRightSLine size={20} />)}
+        </div>
+      )}
 
       {hasChild && (
         <div

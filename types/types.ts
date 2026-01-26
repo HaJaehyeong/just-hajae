@@ -16,6 +16,7 @@ export type ShareLink = {
 export type TreeNode = {
   id: string;
   label: string;
+  url?: string;
   children?: TreeNode[];
   isBold?: boolean;
 };
