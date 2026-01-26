@@ -18,14 +18,14 @@ export const NAV_TABS: NavTab[] = [
     name: 'Resume',
   },
   {
-    id: 'work',
+    id: 'workexperience',
     url: '/work-experience',
     name: 'Work-Experience',
   },
   {
-    id: 'hobby',
-    url: '/hobby',
-    name: 'Hobby',
+    id: 'universitylife',
+    url: '/university-life',
+    name: 'University-Life',
   },
   {
     id: 'contactme',
