@@ -48,8 +48,8 @@ export const SHARE_LINK: ShareLink[] = [
 export const TREE_MENU: TreeNode[] = [
   {
     id: 'tree-node-1',
-    label: 'Hello World!!!!',
-    url: '/test',
+    label: 'Profile',
+    url: '/about-me/profile',
     isBold: true,
   },
   {
