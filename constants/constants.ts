@@ -101,6 +101,7 @@ export const TREE_MENU: TreeNode[] = [
   {
     id: 'tree-node-parents-experience',
     label: 'Experience',
+    url: '/about-me/experience',
     children: [
       {
         id: 'tree-node-childrent-sideproject-1',

@@ -29,22 +29,14 @@ function TreeItem({ node }: TreeItemProps) {
 
   return (
     <div className={styles['node']}>
-      {!!node.url ? (
-        <Link
-          className={`${styles['node__parents']} ${node.isBold ? styles['bold'] : ''}`}
-          href={node.url}
-        >
-          {node.label}
-        </Link>
-      ) : (
-        <div
-          className={`${styles['node__parents']} ${node.isBold ? styles['bold'] : ''}`}
-          onClick={() => hasChild && setIsOpen((prev) => !prev)}
-        >
-          <span>{node.label}</span>
-          {hasChild && (isOpen ? <RiArrowDownSLine size={20} /> : <RiArrowRightSLine size={20} />)}
-        </div>
-      )}
+      <Link
+        className={`${styles['node__parents']} ${node.isBold ? styles['bold'] : ''}`}
+        onClick={() => hasChild && setIsOpen((prev) => !prev)}
+        href={node.url}
+      >
+        {node.label}
+        {hasChild && (isOpen ? <RiArrowDownSLine size={20} /> : <RiArrowRightSLine size={20} />)}
+      </Link>
 
       {hasChild && (
         <div
