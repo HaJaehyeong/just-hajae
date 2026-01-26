@@ -4,6 +4,7 @@ import { RiArrowDownSLine, RiArrowRightSLine } from '@remixicon/react';
 import { useState } from 'react';
 import styles from './tree-menu.module.scss';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface TreeMenuProps {
   nodes: TreeNode[];
@@ -24,13 +25,16 @@ interface TreeItemProps {
 }
 
 function TreeItem({ node }: TreeItemProps) {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const hasChild = !!(node.children && node.children.length > 0);
 
   return (
     <div className={styles['node']}>
       <Link
-        className={`${styles['node__parents']} ${node.isBold ? styles['bold'] : ''}`}
+        className={`${styles['node__parents']} ${node.isBold ? styles['bold'] : ''} ${
+          pathname === node.url ? styles['active'] : ''
+        }`}
         onClick={() => hasChild && setIsOpen((prev) => !prev)}
         href={node.url}
       >
