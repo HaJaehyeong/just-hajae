@@ -1,9 +1,6 @@
-import LinkCard from '@/components/link-card/link-card';
 import ThreeColumnLayout from '@/components/three-column-layout/three-column-layout';
-import { SHARE_LINK } from '@/constants/constants';
 import type { Metadata } from 'next';
-import styles from './page.module.scss';
-import SideNav from '@/components/side-nav/side-nav';
+import SideNav from '@/app/about-me/_components/side-nav/side-nav';
 
 export const metadata: Metadata = {
   title: 'Just Hajae | About Me',
@@ -15,26 +12,5 @@ interface AboutMeLayoutProps {
 }
 
 export default function AboutMeLayout({ children }: Readonly<AboutMeLayoutProps>) {
-  return (
-    <ThreeColumnLayout
-      left={
-        <div className={styles['left']}>
-          <div>
-            {SHARE_LINK.map((link) => (
-              <LinkCard
-                key={link.key}
-                url={link.url}
-                title={link.title}
-                icon={link.icon}
-                isExternal
-              />
-            ))}
-          </div>
-          <SideNav />
-        </div>
-      }
-      center={<>{children}</>}
-      right={<>world</>}
-    />
-  );
+  return <ThreeColumnLayout left={<SideNav />} center={<>{children}</>} right={<>world</>} />;
 }

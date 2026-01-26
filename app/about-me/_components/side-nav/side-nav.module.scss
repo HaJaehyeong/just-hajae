@@ -1,5 +1,11 @@
 @use '@/styles/mixins' as mixin;
 
-.left {
+.side-nav {
   @include mixin.flex(column, flex-start, flex-start, nowrap, 24px);
+
+  &__tree {
+    width: 100%;
+    height: calc(100dvh - 258px);
+    overflow-y: scroll;
+  }
 }
