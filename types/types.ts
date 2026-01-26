@@ -4,6 +4,7 @@ export type NavTab = {
   id: string;
   url: string;
   name: string;
+  isExternal?: boolean;
 };
 
 export type ShareLink = {

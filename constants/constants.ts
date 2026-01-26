@@ -8,29 +8,26 @@ export const NAV_TABS: NavTab[] = [
     name: 'HOME',
   },
   {
-    id: 'profile',
-    url: '/profile',
-    name: 'Profile',
-  },
-  {
-    id: 'resume',
-    url: '/resume',
-    name: 'Resume',
-  },
-  {
-    id: 'workexperience',
-    url: '/work-experience',
-    name: 'Work-Experience',
-  },
-  {
-    id: 'universitylife',
-    url: '/university-life',
-    name: 'University-Life',
+    id: 'aboutme',
+    url: '/about-me',
+    name: 'About-Me',
   },
   {
     id: 'contactme',
     url: '/contact-me',
     name: 'Contact-Me',
+  },
+  {
+    id: 'tonotionresume',
+    url: 'https://sleepy-manicure-27d.notion.site/Hajae-2e2d3ec7ea10800c9894fa002e9f85d4?pvs=74',
+    name: 'To-Resume',
+    isExternal: true,
+  },
+  {
+    id: 'togithub',
+    url: 'https://github.com/HaJaehyeong/',
+    name: 'To-Github',
+    isExternal: true,
   },
 ];
 
