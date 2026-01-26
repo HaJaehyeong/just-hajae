@@ -47,198 +47,84 @@ export const SHARE_LINK: ShareLink[] = [
 
 export const TREE_MENU: TreeNode[] = [
   {
-    id: 'tree-node-1',
+    id: 'tree-node-introduce',
+    label: 'Introduce',
+    url: '/about-me/introduce',
+    isBold: true,
+  },
+  {
+    id: 'tree-node-profile',
     label: 'Profile',
     url: '/about-me/profile',
+  },
+  {
+    id: 'tree-node-parents-yeonhap',
+    label: 'YeonHap System',
     isBold: true,
-  },
-  {
-    id: 'tree-node-2',
-    label: 'He ll oW or ld !!!!!',
-    url: '/test2',
-  },
-  {
-    id: 'tree-node-parents-1',
-    label: 'Hello Parents!',
     children: [
       {
-        id: 'tree-node-childrent-1',
-        label: 'Hello Children!',
-        url: '/child',
+        id: 'tree-node-childrent-barofactorypro',
+        label: 'Baro Factory Pro',
+        url: '/about-me/work-experience/baro-factory-pro',
       },
       {
-        id: 'tree-node-childrent-2',
-        label: 'Hello Children!!',
-        url: '/',
+        id: 'tree-node-childrent-rnd',
+        label: 'R&D Smart Machine',
+        url: '/about-me/work-experience/smart-machine',
+      },
+      {
+        id: 'tree-node-childrent-barofactory',
+        label: 'Baro Factory',
+        url: '/about-me/work-experience/baro-factory',
       },
     ],
   },
   {
-    id: 'tree-node-parents-2',
-    label: 'Hello Parents2!!',
+    id: 'tree-node-parents-bizreach',
+    label: 'Bizreach',
+    isBold: true,
     children: [
       {
-        id: 'tree-node-childrent-3',
-        label: 'Hello Children!!!',
-        url: '/',
+        id: 'tree-node-childrent-angular',
+        label: 'AngularJS to Angular',
+        url: '/about-me/work-experience/angularjs-to-angular',
       },
       {
-        id: 'tree-node-childrent-4',
-        label: 'Hello Children!!!!',
-        url: '/',
+        id: 'tree-node-childrent-selectionflow',
+        label: 'Selection Flow',
+        url: '/about-me/work-experience/selection-flow',
       },
     ],
-    isBold: true,
-  },
-  // NOTE(hajae): for TEST
-  {
-    id: 'scroll-test-1',
-    label: 'Scroll Test',
-    url: '/',
   },
   {
-    id: 'scroll-test-2',
-    label: 'Scroll Test',
-    url: '/',
+    id: 'tree-node-parents-experience',
+    label: 'Experience',
+    children: [
+      {
+        id: 'tree-node-childrent-sideproject-1',
+        label: 'WriteOn',
+        url: '/about-me/experience/writeon',
+      },
+      {
+        id: 'tree-node-childrent-kituna',
+        label: 'Capstone Project',
+        url: '/about-me/experience/capstone-project',
+      },
+      {
+        id: 'tree-node-childrent-ppomi',
+        label: 'PPomi (Iot)',
+        url: '/about-me/experience/PPomi',
+      },
+    ],
   },
   {
-    id: 'scroll-test-3',
-    label: 'Scroll Test',
-    url: '/',
+    id: 'tree-node-scrum',
+    label: 'Scrum',
+    url: '/about-me/scrum',
   },
   {
-    id: 'scroll-test-4',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-5',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-6',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-7',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-8',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-9',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-10',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-11',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-12',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-13',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-14',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-15',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-16',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-17',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-18',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-19',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-20',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-21',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-22',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-23',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-24',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-25',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-26',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-27',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-28',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-29',
-    label: 'Scroll Test',
-    url: '/',
-  },
-  {
-    id: 'scroll-test-30',
-    label: 'Scroll Test',
-    url: '/',
+    id: 'tree-node-skill',
+    label: 'Skill',
+    url: '/about-me/skill',
   },
 ];
