@@ -61,21 +61,22 @@ export const TREE_MENU: TreeNode[] = [
     id: 'tree-node-parents-yeonhap',
     label: 'YeonHap System',
     isBold: true,
+    url: '/about-me/yeonhap-system',
     children: [
       {
         id: 'tree-node-childrent-barofactorypro',
         label: 'Baro Factory Pro',
-        url: '/about-me/work-experience/baro-factory-pro',
+        url: '/about-me/yeonhap-system/baro-factory-pro',
       },
       {
         id: 'tree-node-childrent-rnd',
         label: 'R&D Smart Machine',
-        url: '/about-me/work-experience/smart-machine',
+        url: '/about-me/yeonhap-system/smart-machine',
       },
       {
         id: 'tree-node-childrent-barofactory',
         label: 'Baro Factory',
-        url: '/about-me/work-experience/baro-factory',
+        url: '/about-me/yeonhap-system/baro-factory',
       },
     ],
   },
@@ -83,16 +84,17 @@ export const TREE_MENU: TreeNode[] = [
     id: 'tree-node-parents-bizreach',
     label: 'Bizreach',
     isBold: true,
+    url: '/about-me/bizreach',
     children: [
       {
         id: 'tree-node-childrent-angular',
         label: 'AngularJS to Angular',
-        url: '/about-me/work-experience/angularjs-to-angular',
+        url: '/about-me/bizreach/angularjs-to-angular',
       },
       {
         id: 'tree-node-childrent-selectionflow',
         label: 'Selection Flow',
-        url: '/about-me/work-experience/selection-flow',
+        url: '/about-me/bizreach/selection-flow',
       },
     ],
   },
