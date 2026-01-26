@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 // @include mixin.flex(row, center, null, null, 10px);
 @mixin flex($direction: row, $align: center, $justify: center, $wrap: nowrap, $gap: null) {
   display: -webkit-box;
@@ -49,7 +51,7 @@ $breakpoints: (
 );
 
 @mixin media($device) {
-  @media (max-width: map-get($breakpoints, $device)) {
+  @media (max-width: map.get($breakpoints, $device)) {
     @content;
   }
 }
@@ -57,19 +59,6 @@ $breakpoints: (
 // @include vw(padding, 20);
 @mixin vw($property, $px, $viewport: 1920) {
   #{$property}: calc(($px / $viewport) * 100vw);
-}
-
-// @include vw-multi(margin, (40px, 10px, 20px, 10px));
-@mixin vw-multi($property, $values, $viewport: 1920) {
-  $result: ();
-
-  @each $value in $values {
-    $numeric-value: if(unit($value) == 'px', $value / 1px, $value);
-    $calc: calc(#{$numeric-value} / #{$viewport} * 100vw);
-    $result: append($result, $calc);
-  }
-
-  #{$property}: $result;
 }
 
 @mixin typo($font-size, $font-weight: 400, $color: var(--text-primary), $letter-spacing: 0) {
