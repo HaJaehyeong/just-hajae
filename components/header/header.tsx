@@ -17,7 +17,11 @@ export default function Header() {
             <Link
               key={tab.id}
               href={tab.url}
-              className={`${styles['tab']} ${pathname === tab.url ? styles['tab--active'] : ''}`}
+              className={`${styles['tab']} ${
+                pathname === tab.url || (tab.url !== '/' && pathname.startsWith(tab.url + '/'))
+                  ? styles['tab--active']
+                  : ''
+              }`}
               target={tab.isExternal ? '_blank' : '_self'}
             >
               {tab.name}
