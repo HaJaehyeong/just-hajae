@@ -49,3 +49,7 @@
 .bold {
   @include mixin.text(body-sm, 400);
 }
+
+.active {
+  color: var(--primary);
+}

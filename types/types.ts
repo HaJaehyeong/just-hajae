@@ -4,6 +4,7 @@ export type NavTab = {
   id: string;
   url: string;
   name: string;
+  isExternal?: boolean;
 };
 
 export type ShareLink = {
@@ -16,7 +17,7 @@ export type ShareLink = {
 export type TreeNode = {
   id: string;
   label: string;
-  url?: string;
+  url: string;
   children?: TreeNode[];
   isBold?: boolean;
 };
