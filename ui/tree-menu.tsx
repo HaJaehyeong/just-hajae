@@ -44,7 +44,9 @@ function TreeItem({ node }: TreeItemProps) {
 
       {hasChild && (
         <div
-          className={`${styles['node__children']} ${isOpen ? styles['node__children--open'] : ''}`}
+          className={`${styles['node__children']} ${isOpen ? styles['node__children--open'] : ''} ${
+            pathname === node.url ? styles['active'] : ''
+          }`}
         >
           <TreeMenu nodes={node.children!} />
         </div>

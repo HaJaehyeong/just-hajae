@@ -1,3 +1,3 @@
-export default function ProfilePage() {
+export default function ExperiencePage() {
   return <div>Experience Page</div>;
 }
