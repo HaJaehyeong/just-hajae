@@ -30,6 +30,7 @@
 }
 
 .tab {
+  @include mixin.flex(row, flex-start, center);
   color: var(--text-secondary);
 
   &--active {
@@ -39,5 +40,13 @@
 
   &:hover {
     color: var(--text-hover);
+  }
+
+  &__external-icon {
+    color: var(--text-secondary);
+
+    &:hover {
+      color: var(--text-hover);
+    }
   }
 }

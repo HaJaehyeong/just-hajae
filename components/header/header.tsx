@@ -3,6 +3,7 @@ import { NAV_TABS } from '@/constants/constants';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './header.module.scss';
+import { RiArrowRightUpLine } from '@remixicon/react';
 
 export default function Header() {
   const pathname = usePathname();
@@ -16,9 +17,15 @@ export default function Header() {
             <Link
               key={tab.id}
               href={tab.url}
-              className={`${styles['tab']} ${pathname === tab.url ? styles['tab--active'] : ''}`}
+              className={`${styles['tab']} ${
+                pathname === tab.url || (tab.url !== '/' && pathname.startsWith(tab.url + '/'))
+                  ? styles['tab--active']
+                  : ''
+              }`}
+              target={tab.isExternal ? '_blank' : '_self'}
             >
               {tab.name}
+              {tab.isExternal && <RiArrowRightUpLine size={14} />}
             </Link>
           ))}
         </div>
